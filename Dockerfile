@@ -1,9 +1,9 @@
+# forked from Shourai/vsftpd-alpine
 FROM alpine:latest
 
-MAINTAINER github.com/shourai
 LABEL Description="vsftpd Docker image based on Alpine Linux. Supports passive mode."
 
-RUN apk --no-cache add vsftpd
+RUN apk --no-cache add vsftpd tzdata
 
 ENV FTP_USER=username
 ENV FTP_PASS=password
@@ -16,6 +16,7 @@ ENV NO_ANON_PASSWD=NO
 ENV ANON_ROOT=/var/ftp
 
 COPY vsftpd.sh /usr/sbin/
+COPY vsftpd.conf /etc/vsftpd/vsftpd.conf
 
 RUN chmod +x /usr/sbin/vsftpd.sh
 
