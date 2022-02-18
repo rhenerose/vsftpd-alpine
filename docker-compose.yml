@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  vsftpd:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      # args:
+      #   USER_ID: 1000
+      #   GROUP_ID: 1000
+    restart: always
+    environment:
+      # config ftpd
+      - FTP_USER=username
+      - FTP_PASS=password
+      - PASV_ENABLE=YES
+      - PASV_MIN_PORT=21100
+      - PASV_MAX_PORT=21110
+      - PASV_ADDRESS=127.0.0.1
+      - ANON_ENABLE=NO
+      - NO_ANON_PASSWD=NO
+      - ANON_ROOT=/var/ftp
+      # Set TimeZone
+      - TZ=Asia/Tokyo
+    ports:
+      - 20:20
+      - 21:21
+      # - 21100-21110:21100-21110
+    volumes:
+      - ./home:/home
+      - ./logs:/var/log/vsftpd
