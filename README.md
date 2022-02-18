@@ -1,10 +1,17 @@
-# vsftpd-alpine
+# [vsftpd-alpine](https://hub.docker.com/r/rhene/vsftpd-alpine)  
+forked from shourai/vsftpd-alpine  
+![GitHub stars](https://img.shields.io/github/stars/rhenerose/vsftpd-alpine?logo=github) ![Docker Stars](https://img.shields.io/docker/stars/rhene/vsftpd-alpine?label=stars&logo=docker) ![Docker Pulls](https://img.shields.io/docker/pulls/rhene/vsftpd-alpine?label=pulls&logo=docker)
 
-A Docker container based on alpine which implements vsftpd.
+# Supported tags and respective `Dockerfile` links
+
+- [`latest` (*Dockerfile*)](https://github.com/rhenerose/vsftpd-alpine/blob/main/Dockerfile) ![Docker Image Size (alpine)](https://img.shields.io/docker/image-size/rhene/vsftpd-alpine/latest?label=alpine&logo=latest%20Linux&style=plastic)
+
+A Docker container based on alpine which implements vsftpd.  
+Add Coustom config file and `tzdata`.
 
 This image can be downloaded from dockerhub
 ```
-docker pull shourai/vsftpd-alpine
+docker pull rhene/vsftpd-alpine
 ```
 
 ## Environment variables
@@ -35,7 +42,7 @@ docker run -d \
 -e FTP_USER=<username> -e FTP_PASS=<password> \
 -e PASV_ADDRESS=<server ip> -e PASV_MIN_PORT=21100 -e PASV_MAX_PORT=21110 \
 -p 20:20 -p 21:21 -p 21100-21110:21100-21110 \
---name vsftpd shourai/vsftpd
+--name vsftpd rhene/vsftpd
 ```
 
 ### docker-compose
@@ -43,7 +50,7 @@ docker run -d \
 version: '3.8'
 services:
   vsftpd:
-    image: shourai/vsftpd-alpine
+    image: rhene/vsftpd-alpine
     container_name: vsftpd
     environment:
       - FTP_USER=username
