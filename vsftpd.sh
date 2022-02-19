@@ -30,4 +30,6 @@ no_anon_password=$NO_ANON_PASSWD
 anon_root=$ANON_ROOT
 " >> /etc/vsftpd/vsftpd.conf
 
+mkdir -p /var/log/vsftpd
+
 /usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf
