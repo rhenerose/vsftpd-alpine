@@ -2,6 +2,7 @@
 
 forked from shourai/vsftpd-alpine  
 
+![GitHub Workflow](https://img.shields.io/github/workflow/status/rhenerose/vsftpd-alpine/buildx)
 ![GitHub stars](https://img.shields.io/github/stars/rhenerose/vsftpd-alpine?logo=github)
 ![Docker Stars](https://img.shields.io/docker/stars/rhene/vsftpd-alpine?label=stars&logo=docker)
 ![Docker Pulls](https://img.shields.io/docker/pulls/rhene/vsftpd-alpine?label=pulls&logo=docker)
